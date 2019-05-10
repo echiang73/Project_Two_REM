@@ -2,14 +2,41 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
+  {{!-- <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
-  <title>Home Page</title>
+  <title>Home Page</title> --}}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TRAINr</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,800,900" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+  <script src="assets/src/bootstrap-input-spinner.js"></script>
+  <script>$("input[type='number']").inputSpinner()</script>
 </head>
 
 <body>
   {{{body}}}
 </body>
+
+<script>
+        $("#upper_body").click(function(e){
+        e.preventDefault();
+        alert("Upper!");
+        });
+        $("#lower_body").click(function(e){
+        e.preventDefault();
+        alert("Lower!");
+        });
+        $("#core_cardio").click(function(e){
+        e.preventDefault();
+        alert("Core!");
+        });
+    
+    </script>
 
 </html>
