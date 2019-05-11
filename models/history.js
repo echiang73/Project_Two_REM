@@ -8,7 +8,7 @@
 module.exports = function(sequelize, DataTypes) {
     var History = sequelize.define("History", {
       id: {
-        DataType: DataType.INTEGER,
+        type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
       },

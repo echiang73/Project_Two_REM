@@ -81,8 +81,9 @@
             <ul id="exercise-list" class="list-group">
               {{#each exercises}}
               <li data-id="{{this.id}}" class="list-group-item">
-                <a href="exercise/{{this.id}}">{{this.text}}</a>
-                <button class="btn btn-danger float-right delete">Set</button>
+                <a href="exercise/{{this.id}}">{{this.exercise_name}}</a>
+                
+                <button class="btn btn-danger float-right delete">Rep</button>
               </li>
               {{/each}}
             </ul>

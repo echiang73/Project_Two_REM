@@ -12,9 +12,10 @@ module.exports = function(app) {
   app.post("/api/exercises/:workout_type", function(req, res) {
     db.Exercise.create({
       exercise_name,
+      exer_img_url,
+      weight,
       repetitions,
-      sets,
-      weight
+      sets
     },{
        where: { workout_type: req.params.workout_type}
     }
