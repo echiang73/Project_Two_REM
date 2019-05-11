@@ -1,24 +1,32 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+  // Get all exercises
+  app.get("/api/exercises", function(req, res) {
+    db.Exercise.findAll({}).then(function(dbExercises) {
+      res.json(dbExercises);
     });
   });
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+  // Create a new exercise routine by workout type
+  app.post("/api/exercises/:workout_type", function(req, res) {
+    db.Exercise.create({
+      exercise_name,
+      repetitions,
+      sets,
+      weight
+    },{
+       where: { workout_type: req.params.workout_type}
+    }
+      ).then(function(dbExercise) {
+      res.json(dbExercise);
     });
   });
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
+  // Delete an exercise by id
+  app.delete("/api/exercises/:id", function(req, res) {
+    db.Exercise.destroy({ where: { id: req.params.id } }).then(function(dbExercise) {
+      res.json(dbExercise);
     });
   });
 };
