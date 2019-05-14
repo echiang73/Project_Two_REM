@@ -3,7 +3,7 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Exercise.findAll({}).then(function(dbExercises) {
+    db.Exercise_template.findAll({}).then(function(dbExercises) {
       res.render("index", {
         msg: "Welcome!",
         exercises: dbExercises
@@ -13,7 +13,7 @@ module.exports = function(app) {
 
   // Load exercise page and pass in an exercise by id
   app.get("/exercise/:id", function(req, res) {
-    db.Exercise.findOne({ where: { id: req.params.id } }).then(function(dbExercise) {
+    db.Exercise_template.findOne({ where: { id: req.params.id } }).then(function(dbExercise) {
       res.render("exercise", {
         exercise: dbExercise
       });

@@ -6,7 +6,7 @@
 //   return Example;
 // };
 module.exports = function(sequelize, DataTypes) {
-    var History = sequelize.define("History", {
+    var User_history = sequelize.define("User_history", {
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -22,7 +22,9 @@ module.exports = function(sequelize, DataTypes) {
         sets_3: DataTypes.BOOLEAN,
         sets_4: DataTypes.BOOLEAN,
         sets_5: DataTypes.BOOLEAN
+    },{
+      freezeTableName: true
     });
-    return History;
+    return User_history;
   };
   

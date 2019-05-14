@@ -57,11 +57,11 @@
 
   <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade" id="nav-routine" role="tabpanel" aria-labelledby="nav-routine-tab"><br>
-      <h5>Routine!</h5>
+      <h5 class="heading">Routine!</h5>
     </div>
 
     <div class="tab-pane fade show active" id="nav-workout" role="tabpanel" aria-labelledby="nav-workout-tab"><br>
-      <h5>Workout Tracker</h5>
+      <h5 class="heading">Workout Tracker</h5>
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="exercise-type-btn" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
@@ -81,9 +81,34 @@
             <ul id="exercise-list" class="list-group">
               {{#each exercises}}
               <li data-id="{{this.id}}" class="list-group-item">
-                <a href="exercise/{{this.id}}">{{this.exercise_name}}</a>
-                
-                <button class="btn btn-danger float-right delete">Rep</button>
+                <div class="container">
+                  <div class="row justify-content-md-center align-items-center">
+                    <div class="col-lg-4">
+                      {{!-- <a href="exercise/{{this.id}}"> --}}
+                      <h3>{{this.exercise_name}}</h3>
+
+                      Weight: {{this.weight}},
+                      Reps: {{this.repetitions}},
+                      Sets: {{this.sets}}
+                      {{!-- </a> --}}
+                    </div>
+                    <div class="col-lg">
+                      <img src="images/exercise-images/{{this.exer_img_url1}}" alt="Exercise Image" style="width: 85px; margin: 2px"/>
+                      <img src="images/exercise-images/{{this.exer_img_url2}}" alt="Exercise Image" style="width: 85px; margin: 2px"/>
+                      {{!-- <img src="images/exercise-images/pullup1.jpg" alt="Pullups" style="width: 80px; margin: 2px"/>
+                      <img src="images/exercise-images/pullup2.jpg" alt="Pullups" style="width: 80px; margin: 2px"/> --}}
+                    </div>
+                    <div class="col-lg-auto">
+                      <button class="btn btn-danger float-right delete" id="set-5">Set #5</button>
+                      <button class="btn btn-danger float-right delete" id="set-4">Set #4</button>
+                      <button class="btn btn-danger float-right delete" id="set-3">Set #3</button>
+                      <button class="btn btn-danger float-right delete" id="set-2">Set #2</button>
+                      <button class="btn btn-danger float-right delete" id="set-1">Set #1</button>
+                    </div>
+                  </div>
+                </div>
+
+
               </li>
               {{/each}}
             </ul>
@@ -126,11 +151,11 @@
     </div>
 
     <div class="tab-pane fade" id="nav-analytics" role="tabpanel" aria-labelledby="nav-analytics-tab"><br>
-      <h5>Analytics!</h5>
+      <h5 class="heading">Analytics!</h5>
     </div>
 
     <div class="tab-pane fade" id="nav-fitbit-stats" role="tabpanel" aria-labelledby="nav-fitbit-stats-tab"><br>
-      <h5>Fitbit Stats</h5>
+      <h5 class="heading">Fitbit Stats</h5>
     </div>
 
     <div class="tab-pane fade" id="nav-spotify" role="tabpanel" aria-labelledby="nav-spotify-tab"><br>
@@ -150,3 +175,11 @@
   integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
   integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+{{!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="../public/js/index.js"></script> --}}
+
+<style>
+  .btn {
+    margin: 2px;
+  }
+</style>

@@ -43,4 +43,10 @@ body{
 .exercise {
   /* background-color: yellow; */
 }
+/* #set-3{
+  margin: 2px;
+} */
 
+.heading {
+  color: yellow;
+}

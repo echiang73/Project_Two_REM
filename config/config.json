@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "MySturt!3",
-    "database": "exampledb",
+    "database": "exercise_db",
     "host": "localhost",
     "dialect": "mysql"
   },

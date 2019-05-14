@@ -1,47 +1,47 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
+var $exerciseText = $("#exercise-text");
+var $exerciseDescription = $("#exercise-description");
 var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+var $exerciseList = $("#exercise-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(example) {
+  saveExercise: function(exercise) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
+      url: "api/exercises",
+      data: JSON.stringify(exercise)
     });
   },
-  getExamples: function() {
+  getExercises: function() {
     return $.ajax({
-      url: "api/examples",
+      url: "api/exercises",
       type: "GET"
     });
   },
-  deleteExample: function(id) {
+  deleteExercise: function(id) {
     return $.ajax({
-      url: "api/examples/" + id,
+      url: "api/exercises/" + id,
       type: "DELETE"
     });
   }
 };
 
-// refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
+// refreshExercises gets new exercises from the db and repopulates the list
+var refreshExercises = function() {
+  API.getExercises().then(function(data) {
+    var $exercises = data.map(function(exercise) {
       var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
+        .text(exercise.text)
+        .attr("href", "/exercise/" + exercise.id);
 
       var $li = $("<li>")
         .attr({
           class: "list-group-item",
-          "data-id": example.id
+          "data-id": exercise.id
         })
         .append($a);
 
@@ -54,8 +54,8 @@ var refreshExamples = function() {
       return $li;
     });
 
-    $exampleList.empty();
-    $exampleList.append($examples);
+    $exerciseList.empty();
+    $exerciseList.append($exercises);
   });
 };
 
@@ -64,36 +64,51 @@ var refreshExamples = function() {
 var handleFormSubmit = function(event) {
   event.preventDefault();
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+  var exercise = {
+    text: $exerciseText.val().trim(),
+    description: $exerciseDescription.val().trim()
   };
 
-  if (!(example.text && example.description)) {
+  if (!(exercise.text && exercise.description)) {
     alert("You must enter an example text and description!");
     return;
   }
 
-  API.saveExample(example).then(function() {
-    refreshExamples();
+  API.saveExercise(exercise).then(function() {
+    refreshExercises();
   });
 
-  $exampleText.val("");
-  $exampleDescription.val("");
+  $exerciseText.val("");
+  $exerciseDescription.val("");
 };
 
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
+// handleDeleteBtnClick is called when an exercise's delete button is clicked
+// Remove the exercise from the db and refresh the list
 var handleDeleteBtnClick = function() {
   var idToDelete = $(this)
     .parent()
     .attr("data-id");
 
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
+  API.deleteExercise(idToDelete).then(function() {
+    refreshExericess();
   });
 };
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+$exerciseList.on("click", ".delete", handleDeleteBtnClick);
+
+// $("upper_body").on("click", handleFormSubmit);
+
+// $("#upper_body").click(function(e){
+//   e.preventDefault();
+//   alert("Upper!");
+//   });
+//   $("#lower_body").click(function(e){
+//   e.preventDefault();
+//   alert("Lower!");
+//   });
+//   $("#core_cardio").click(function(e){
+//   e.preventDefault();
+//   alert("Core!");
+//   });
