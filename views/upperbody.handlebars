@@ -1,6 +1,6 @@
 <div class="container">
   <nav class="navbar sticky-top navbar-light bg-light">
-    <div id="logo">TRAINr</div>
+    <div id="logo">TRAINr UpperBody</div>
     <div id="tagline">Your Personal Workout Tracking Platform</div>
     <a class="navbar-brand" href="#">Logout</a>
   </nav>
@@ -46,53 +46,14 @@
             {{!-- --------------------------------------------------------- --}}
 
             {{!-- <ul> --}}
-              {{!-- {{#each exercises}} --}}
+              {{#each exercises}}
                 {{!-- {{#if workout_type == "Upper Body"}} --}}
-                  {{!-- {{> exercises/exercise-block}} --}}
+                  {{> exercises/exercise-block}}
                 {{!-- {{/if}} --}}
-              {{!-- {{/each}} --}}
+              {{/each}}
             {{!-- </ul> --}}
 
-            <ul id="exercise-list" class="list-group">
-              {{#each exercises}}
-              <li data-id="{{this.id}}" class="list-group-item"> {{!-- bg-transparent --}}
-                <div class="container">
-                  <div class="row justify-content-md-center align-items-center">
-                    <div class="col-lg-4">
-                      <a href="exercise/{{this.id}}">
-                      <h3>{{this.exercise_name}}</h3>
-
-                      Weight: {{this.weight}},
-                      Reps: {{this.repetitions}},
-                      Sets: {{this.sets}}
-                      </a>
-                    </div>
-                    <div class="col-lg">
-                      <img src="images/exercise-images/{{this.exer_img_url1}}" alt="Exercise Image"
-                        id="exercise-image1" />
-                      <img src="images/exercise-images/{{this.exer_img_url2}}" alt="Exercise Image"
-                        id="exercise-image2" />
-                      {{!-- <img src="images/exercise-images/pullup1.jpg" alt="Pullups" style="width: 85px; margin: 2px"/> --}}
-                      {{!-- <img src="images/exercise-images/pullup2.jpg" alt="Pullups" style="width: 85px; margin: 2px"/> --}}
-                    </div>
-                    <div class="col-lg-auto">
-                      <button class="btn btn-danger delete" id="set-1" data-toggle="button" aria-pressed="false"
-                        autocomplete="off">Set#1</button>
-                      <button class="btn btn-danger delete" id="set-2" data-toggle="button" aria-pressed="false"
-                        autocomplete="off">Set#2</button>
-                      <button class="btn btn-danger delete" id="set-3" data-toggle="button" aria-pressed="false"
-                        autocomplete="off">Set#3</button>
-                      <button class="btn btn-danger delete" id="set-4" data-toggle="button" aria-pressed="false"
-                        autocomplete="off">Set#4</button>
-                      <button class="btn btn-danger delete" id="set-5" data-toggle="button" aria-pressed="false"
-                        autocomplete="off">Set#5</button>
-                    </div>
-                  </div>
-                </div>
-
-
-              </li>
-              {{/each}}
+            
             </ul>
             <button class="btn btn-danger mx-auto complete" id="log-completed-btn">Log Completed Workout</button>
             {{!-- --------------------------------------------------------- --}}

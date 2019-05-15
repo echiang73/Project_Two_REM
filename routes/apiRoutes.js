@@ -8,6 +8,15 @@ module.exports = function(app) {
     });
   });
 
+  // Get all exercises based on workout type!
+  app.get("/api/exercises/:workout_type", function(req, res) {
+    db.Exercise_template.findAll({
+      where: {workout_type: req.params.workout_type}
+    }).then(function(dbExercises) {
+      res.json(dbExercises);
+    });
+  });
+
   // Create a new exercise routine by workout type
   app.post("/api/exercises/:workout_type", function(req, res) {
     db.Exercise_template.create({

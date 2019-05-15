@@ -13,7 +13,7 @@ html {
   font-family: 'Raleway', sans-serif;
 }
 body{
-  background-image: url(../images/mainBackground1.jpg); //why isn't this linking?
+  background-image: url(../images/mainBackground1.jpg);
   background-attachment: fixed;
   background-position: top;
   background-repeat: no-repeat;
@@ -22,31 +22,100 @@ body{
 }
 
 .navbar {
-  background-color: lightblue !important;
+  /* background-color: lightblue !important; */
+  background-image: linear-gradient(to right, #888888, #dadada);
   border-radius: 4px;
-  border: solid 1px darkgray;
+  border: solid 1px black;
 }
 
 #logo {
   /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: 'Roboto', sans-serif;
   font-weight: 900;
-  font-size: 2.6rem;
+  font-size: 50px;
+  /* font-size: 2.6rem; */
   text-align: center;
-  color: blue;
+  color: #007bff;
+  /* color: blue; */
   /* color: rgb(2, 150, 25); */
   text-align: center;
   font-weight: bolder;
   -webkit-text-stroke: 1px black);
   text-shadow:
-      3px 3px 0 gray;
+    3px 3px 0 rgb(50, 50, 50);
 }
-.exercise {
-  /* background-color: yellow; */
+#tagline{
+  font-size: 20px;
+  color: #007bff;
 }
-/* #set-3{
-  margin: 2px;
-} */
+#exercise-image1, #exercise-image2 {
+  width: 125px; margin: 2px;
+  border-radius: 3px 25px;
+  border: 1px solid black;
+}
 
 .heading {
   color: yellow;
 }
+
+.btn {
+  margin: 2px;
+  border: 1px solid black;
+}
+
+.exercise{
+  border: 0px solid red;
+}
+
+/* .col-lg, .col-lg-4, .col-lg-auto{
+  padding: 0px;
+} */
+.list-group-item{
+  margin: 10px 0 10px 0; 
+  opacity: 0.85;
+  border-radius: 5px;
+}
+.card-body{
+  padding-top: 0px; 
+  padding-bottom: 0px;
+}
+#log-completed-btn{
+  padding: 20px;
+  font-weight: bold;
+  font-size: 24px;
+  margin: 10px 0 50px 0;
+}
+
+
+
+
+/* Medium devices (landscape tablet, 1080px) */
+@media only screen and (min-width: 1200px) {
+  .list-group-item {
+    width: 110%;
+  }
+  body{
+      /* background-image: url('../images/kapalua-bay-besthawaii0216alt.jpg');
+      background-attachment: fixed;
+      background-position: top;
+      background-repeat: no-repeat;
+      background-color: #f4b87c; */
+  }
+} 
+
+/* Small devices (portrait phone, 520px) */
+@media only screen and (min-width: 992px) {
+  /* body{
+      background-image: url('../images/kapalua-bay-besthawaii0216alt2.jpg');
+      background-attachment: fixed;
+      background-position: top;
+      background-repeat: no-repeat;
+      background-color: #f4b87c;
+  }
+  .fullTitle{
+      font-size: 40px;
+  }
+  #instructions{
+      font-size: 14px;
+  } */
+} 
