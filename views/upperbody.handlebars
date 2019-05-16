@@ -1,6 +1,6 @@
 <div class="container">
   <nav class="navbar sticky-top navbar-light bg-light">
-    <div id="logo">TRAINr</div>
+    <div id="logo">TRAINr UpperBody</div>
     <div id="tagline">Your Personal Workout Tracking Platform</div>
     <a class="navbar-brand" href="#">Logout</a>
   </nav>
@@ -34,9 +34,9 @@
           Choose the part of body to work out
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#" id="upper_body" value="Upper Body">Monday: Upper Body</a>
-          <a class="dropdown-item" href="#" id="lower_body" value="Lower Body">Wednesday: Lower Body</a>
-          <a class="dropdown-item" href="#" id="core_cardio" value="Core/Cardio">Friday: Core/Cardio</a>
+          <a class="dropdown-item" href="#" id="upper_body">Monday: Upper Body</a>
+          <a class="dropdown-item" href="#" id="lower_body">Wednesday: Lower Body</a>
+          <a class="dropdown-item" href="#" id="core_cardio">Friday: Core/Cardio</a>
         </div>
         <br><br>
       </div>
@@ -46,27 +46,15 @@
             {{!-- --------------------------------------------------------- --}}
 
             {{!-- <ul> --}}
-              {{!-- {{#each exercises}} --}}
+              {{#each exercises}}
                 {{!-- {{#if workout_type == "Upper Body"}} --}}
-                  {{!-- {{> exercises/exercise-block}} --}}
+                  {{> exercises/exercise-block}}
                 {{!-- {{/if}} --}}
-              {{!-- {{/each}} --}}
+              {{/each}}
             {{!-- </ul> --}}
-            <div class="col col-lg-12">
-              <ul id="exercise-list" class="list-group">
-              
-              </ul>
 
-            </div>
-            {{!-- <div class="col col-lg-3">
-              <ul id="exercise-list2" class="list-group2"></ul>
-              
-            </div>
-            <div class="col col-lg-6">
-              <ul id="exercise-list3" class="list-group3"></ul>
-        
-            </div> --}}
-
+            
+            </ul>
             <button class="btn btn-danger mx-auto complete" id="log-completed-btn">Log Completed Workout</button>
             {{!-- --------------------------------------------------------- --}}
             {{!-- <div class="col col-lg-3">
@@ -131,8 +119,5 @@
   integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
   integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-<script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="../public/js/index.js"></script>

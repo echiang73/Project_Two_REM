@@ -6,7 +6,7 @@
 //   return Example;
 // };
 module.exports = function(sequelize, DataTypes) {
-  var Exercise = sequelize.define("Exercise", {
+  var Exercise_template = sequelize.define("Exercise_template", {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -14,10 +14,13 @@ module.exports = function(sequelize, DataTypes) {
     },
       workout_type: DataTypes.STRING,
       exercise_name: DataTypes.STRING,
-      exer_img_url: DataTypes.STRING,
+      exer_img_url1: DataTypes.STRING,
+      exer_img_url2: DataTypes.STRING,
       weight: DataTypes.INTEGER,
       repetitions: DataTypes.STRING,
       sets: DataTypes.INTEGER
+  },{
+    freezeTableName: true
   });
-  return Exercise;
+  return Exercise_template;
 };

@@ -3,14 +3,23 @@ var db = require("../models");
 module.exports = function(app) {
   // Get all exercises
   app.get("/api/exercises", function(req, res) {
-    db.Exercise.findAll({}).then(function(dbExercises) {
+    db.Exercise_template.findAll({}).then(function(dbExercises) {
+      res.json(dbExercises);
+    });
+  });
+
+  // Get all exercises based on workout type!
+  app.get("/api/exercises/:workout_type", function(req, res) {
+    db.Exercise_template.findAll({
+      where: {workout_type: req.params.workout_type}
+    }).then(function(dbExercises) {
       res.json(dbExercises);
     });
   });
 
   // Create a new exercise routine by workout type
   app.post("/api/exercises/:workout_type", function(req, res) {
-    db.Exercise.create({
+    db.Exercise_template.create({
       exercise_name,
       exer_img_url,
       weight,
@@ -26,7 +35,7 @@ module.exports = function(app) {
 
   // Delete an exercise by id
   app.delete("/api/exercises/:id", function(req, res) {
-    db.Exercise.destroy({ where: { id: req.params.id } }).then(function(dbExercise) {
+    db.Exercise_template.destroy({ where: { id: req.params.id } }).then(function(dbExercise) {
       res.json(dbExercise);
     });
   });
