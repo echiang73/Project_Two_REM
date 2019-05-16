@@ -48,11 +48,11 @@ body{
   font-size: 20px;
   color: #007bff;
 }
-#exercise-image1, #exercise-image2 {
+/* #exercise-image1, #exercise-image2 {
   width: 125px; margin: 2px;
   border-radius: 3px 25px;
   border: 1px solid black;
-}
+} */
 
 .heading {
   color: yellow;
@@ -85,14 +85,50 @@ body{
   font-size: 24px;
   margin: 10px 0 50px 0;
 }
+#description1{
+  padding: 0 10px 0 10px;
+  
+}
+#description2{
+  font-size: 20px;
+  color: #007bff;
+  float: left;
+  position: relative;
+}
 
+#images1and2{
+  float: left;
+  padding: 0 20px 0 20px;
+}
+#image1, #image2{
+  width: 125px;
+  height: 125px;
+  margin: 2px;
+  border: 1px solid black;
+  border-radius: 3px 25px;
+}
 
+.completeSet{
+  height: 75px;
+  width: 75px;
+  border-radius: 25px;
+}
+
+.completeSetBtns{
+  clear: both;
+  position: absolute;
+  right: 10px;
+}
+
+.clickedBtn{
+  background: green;
+}
 
 
 /* Medium devices (landscape tablet, 1080px) */
 @media only screen and (min-width: 1200px) {
   .list-group-item {
-    width: 110%;
+    /* width: 110%; */
   }
   body{
       /* background-image: url('../images/kapalua-bay-besthawaii0216alt.jpg');

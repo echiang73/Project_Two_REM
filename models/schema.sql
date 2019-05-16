@@ -20,7 +20,6 @@ CREATE TABLE User_history(
 
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 user_id INT NOT NULL,
-exercise_id INT NOT NULL,
 weight INT NOT NULL,
 repetitions INT NOT NULL,
 sets_1 BOOLEAN NOT NULL,
