@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "MySturt!3",
-    "database": "exercise_db",
+    "password": "UABootcamp",
+    "database": "crazy_blogger_mod",
     "host": "localhost",
     "dialect": "mysql"
   },
