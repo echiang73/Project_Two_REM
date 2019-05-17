@@ -9,10 +9,10 @@
 
   <nav>
     <div class="nav nav-tabs" id="nav-tab" role="tablist">
-      <a class="nav-item nav-link" id="nav-routine-tab" data-toggle="tab" href="#nav-routine" role="tab"
-        aria-controls="nav-routine" aria-selected="false">Routine</a>
-      <a class="nav-item nav-link active" id="nav-workout-tab" data-toggle="tab" href="#nav-workout" role="tab"
-        aria-controls="nav-workout" aria-selected="true">Workout</a>
+      <a class="nav-item nav-link active" id="nav-routine-tab" data-toggle="tab" href="#nav-routine" role="tab"
+        aria-controls="nav-routine" aria-selected="true">Routine</a>
+      <a class="nav-item nav-link" id="nav-workout-tab" data-toggle="tab" href="#nav-workout" role="tab"
+        aria-controls="nav-workout" aria-selected="false">Workout</a>
       <a class="nav-item nav-link" id="nav-analytics-tab" data-toggle="tab" href="#nav-analytics" role="tab"
         aria-controls="nav-analytics" aria-selected="false">Analytics</a>
       <a class="nav-item nav-link" id="nav-fitbit-stats-tab" data-toggle="tab" href="#nav-fitbit-stats" role="tab"
@@ -23,11 +23,167 @@
   </nav>
 
   <div class="tab-content" id="nav-tabContent">
-    <div class="tab-pane fade" id="nav-routine" role="tabpanel" aria-labelledby="nav-routine-tab"><br>
-      <h5 class="heading">Routine!</h5>
+    <div class="tab-pane fade show active" id="nav-routine" role="tabpanel" aria-labelledby="nav-routine-tab"><br>
+      {{!-- <h5 class="heading">Routine</h5> --}}
+
+      {{!-- <br> --}}
+      {{!-- <h6 style="color: white">API Library Database to Search for How to Do an Exercise!</h6>
+      <br>
+      <h6 style="color: white">Under Construction!</h6>
+      <img src ="images/comingsoon.jpg" style="width: 50%"/> --}}
+
+<div class="container" id="parallax">
+
+    <body>
+
+        <div class="card-deck">
+
+            <div class="card">
+                <img src="images/cardioBackground.jpg" class="card-img-top" alt="cardio">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-heartbeat"></i></i> Cardio</h5>
+                    <p class="card-Description">Like it or not, cardio is an essential part of being healthy. Every doctor, trainer, and fitness buff can speak for its bevy of benefits. Not just weight loss! Cardio offers reduced stress, a healthier heart and lungs, improved muscle
+                        density, and even decreased risk of some types of cancer and heart disease have been attributed to cardio.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://www.google.com/search?q=cardio+workouts&source=lnms&tbm=vid&sa=X&ved=0ahUKEwjD2rbEtqPiAhWriFQKHX6JBYUQ_AUIDigB&biw=1305&bih=656" title="TRAINr Cardio Workouts" target="_blank" class="btn btn-warning btn-lg btn-block">Cardio Workouts</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/upperBackground.jpg" class="card-img-top" alt="upper">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-dumbbell"></i> Upper Body</h5>
+                    <p class="card-Description">Putting together an effective upper body workout requires a few very quick and simple steps. In the most simple and basic sense, your upper body can really only do 6 things. It can push and pull horizontally, push and pull vertically,
+                        flex at the elbow, and extend at the elbow.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://www.google.com/search?biw=1305&bih=656&tbm=vid&ei=Ch_fXNX5IOue0gLLoYOwAg&q=upper+body+workouts&oq=upper+body+workouts&gs_l=psy-ab.3..0l10.395432.399391.0.400166.11.11.0.0.0.0.191.1131.7j4.11.0....0...1c.1.64.psy-ab..2.9.961...0i13k1j0i7i30k1.0.DG1Iy4wn7PM"
+                        title="TRAINr Upper Body Workouts" target="_blank" class="btn btn-warning btn-lg btn-block">Upper Body Workouts</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/lowerBackground.jpg" class="card-img-top" alt="lower">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-shoe-prints"></i> Lower Body</h5>
+                    <p class="card-Description">Your lower body consists of some of your biggest muscle groups: your glutes, quads and hamstrings. Don't worry if you're new to exercising or not super confident about doing lower body exercises. Each of these muscle groups can be
+                        developed with a simple beginner lower body workout. Developing your lower body is beneficial for several reasons.
+                    </p>
+                </div>
+                <div class="card-footer" id="footer">
+                    <a href="https://www.google.com/search?biw=1305&bih=656&tbm=vid&ei=myDfXLvNKI79_wS_uYn4Ag&q=lower+body+workouts&oq=lower+body+workouts&gs_l=psy-ab.3..0l10.107070.108691.0.113154.6.6.0.0.0.0.181.674.3j3.6.0....0...1c.1.64.psy-ab..2.4.494...0i13k1j0i7i30k1j0i7i5i30k1j0i10k1.0.O1E2kGJWPVs"
+                        title="TRAINr Lower Body Workouts" target="_blank" class="btn btn-warning btn-lg btn-block">Lower Body Workouts</a>
+                </div>
+            </div>
+
+        </div>
+
+        <br>
+
+        <div class="card" id="article">
+
+            <div class="card-header">
+                <h2><i class="fas fa-hourglass-start"></i> Fitness program: 5 steps to get started</h2>
+            </div>
+
+            <div class="card-body">
+
+                <h3 class="card-title">Are you thinking about starting a fitness program? Good for you! You're only five steps away from a healthier lifestyle.</h3>
+
+                <h6 class="byline">By Mayo Clinic Staff</h6>
+
+                <br>
+
+                <p>Starting a fitness program may be one of the best things you can do for your health. Physical activity can reduce your risk of chronic disease, improve your balance and coordination, help you lose weight ó and even improve your sleep habits
+                    and self-esteem. And there's more good news. You can start a fitness program in only five steps.
+                </p>
+
+                <!-- Number 1 -->
+
+                <h4 class="card-Description">1. Assess your fitness level</h4>
+                <ul class="list">
+                    <li>Your pulse rate before and immediately after walking 1 mile (1.6 kilometers)</li>
+                    <li>How long it takes to walk 1 mile or 400 meters, or how long it takes to run 1.5 miles (2.41 kilometers)
+                    </li>
+                    <li>How many half situps, standard pushups or modified pushups you can do at a time</li>
+                    <li>How far you can reach forward while seated on the floor with your legs in front of you</li>
+                    <li>Your waist circumference, just above your hipbones</li>
+                    <li>Your body mass index</li>
+                </ul>
+
+                <!-- Number 2 -->
+
+                <h5 class="card-Description">2. Design your fitness program</h5>
+                <ul class="list">
+                    <li><strong>Consider your fitness goals.</strong> Are you starting a fitness program to help lose weight? Or do you have another motivation, such as preparing for a marathon? Having clear goals can help you gauge your progress and stay
+                        motivated.
+                    </li>
+                    <li><strong>Create a balanced routine.</strong>
+                        <p> The Department of Health and Human Services recommends getting at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous aerobic activity a week, or a combination of moderate and vigorous activity.</p>
+                        <p>For example, try to get about 30 minutes of aerobic exercise on most days of the week. Also aim to incorporate strength training of all the major muscle groups into a fitness routine at least two days a week.</p>
+                    </li>
+                    <li><strong>Start low and progress slowly.</strong> If you're just beginning to exercise, start cautiously and progress slowly. If you have an injury or a medical condition, consult your doctor or an exercise therapist for help designing
+                        a fitness program that gradually improves your range of motion, strength and endurance.
+                    </li>
+                    <li><strong>Build activity into your daily routine.</strong> Finding time to exercise can be a challenge. To make it easier, schedule time to exercise as you would any other appointment. Plan to watch your favorite show while walking on
+                        the treadmill, read while riding a stationary bike, or take a break to go on a walk at work.
+                    </li>
+                    <li><strong>Plan to include different activities.</strong> Different activities (cross-training) can keep exercise boredom at bay. Cross-training using low-impact forms of activity, such as biking or water exercise, also reduces your chances
+                        of injuring or overusing one specific muscle or joint. Plan to alternate among activities that emphasize different parts of your body, such as walking, swimming and strength training.
+                    </li>
+                    <li><strong>Allow time for recovery.</strong> Many people start exercising with frenzied zeal &mdash; working out too long or too intensely &mdash; and give up when their muscles and joints become sore or injured. Plan time between sessions
+                        for your body to rest and recover.
+                    </li>
+                    <li><strong>Put it on paper.</strong> A written plan may encourage you to stay on track.
+                    </li>
+                </ul>
+
+                <!-- Number 3 -->
+
+                <h5 class="card-Description">3. Assemble your equipment</h5>
+                <p>You'll probably start with athletic shoes. Be sure to pick shoes designed for the activity you have in mind. For example, running shoes are lighter in weight than cross-training shoes, which are more supportive.
+                </p>
+                <p>If you're planning to invest in exercise equipment, choose something that's practical, enjoyable and easy to use. You may want to try out certain types of equipment at a fitness center before investing in your own equipment.</p>
+                <div id='adsmobileBottom'></div>
+                <p>You might consider using fitness apps for smart devices or other activity tracking devices, such as ones that can track your distance, track calories burned or monitor your heart rate.</p>
+
+                <!-- Number 4 -->
+
+                <h5 class="card-Description">4. Get started</h5>
+                <ul>
+                    <li><strong>Start slowly and build up gradually.</strong> Give yourself plenty of time to warm up and cool down with easy walking or gentle stretching. Then speed up to a pace you can continue for five to 10 minutes without getting overly
+                        tired. As your stamina improves, gradually increase the amount of time you exercise. Work your way up to 30 to 60 minutes of exercise most days of the week.</li>
+                    <li><strong>Break things up if you have to.</strong> You don't have to do all your exercise at one time, so you can weave in activity throughout your day. Shorter but more-frequent sessions have aerobic benefits, too. Exercising in short
+                        sessions a few times a day may fit into your schedule better than a single 30-minute session. Any amount of activity is better than none at all.</li>
+                    <li><strong>Be creative.</strong> Maybe your workout routine includes various activities, such as walking, bicycling or rowing. But don't stop there. Take a weekend hike with your family or spend an evening ballroom dancing. Find activities
+                        you enjoy to add to your fitness routine.</li>
+                    <li><strong>Listen to your body.</strong> If you feel pain, shortness of breath, dizziness or nausea, take a break. You may be pushing yourself too hard.</li>
+                    <li><strong>Be flexible.</strong> If you're not feeling good, give yourself permission to take a day or two off.</li>
+                </ul>
+
+                <!-- Number 5 -->
+
+                <h5 class="card-Description">5. Monitor your progress</h5>
+                <p>Retake your personal fitness assessment six weeks after you start your program and then again every few months. You may notice that you need to increase the amount of time you exercise in order to continue improving. Or you may be pleasantly
+                    surprised to find that you're exercising just the right amount to meet your fitness goals.</p>
+                <div id='adsmobileBottom'></div>
+                <p>If you lose motivation, set new goals or try a new activity. Exercising with a friend or taking a class at a fitness center may help, too.</p>
+                <p>Starting an exercise program is an important decision. But it doesn't have to be an overwhelming one. By planning carefully and pacing yourself, you can establish a healthy habit that lasts a lifetime.
+                </p>
+
+                {{!-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
+            </div>
+        </div>
+
+    </body>
+
+</div>
+
     </div>
 
-    <div class="tab-pane fade show active" id="nav-workout" role="tabpanel" aria-labelledby="nav-workout-tab"><br>
+    <div class="tab-pane fade" id="nav-workout" role="tabpanel" aria-labelledby="nav-workout-tab"><br>
       <h5 class="heading">Workout Tracker</h5>
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="exercise-type-btn" data-toggle="dropdown"
@@ -44,62 +200,15 @@
       <div class="card exercise bg-transparent"> {{!-- bg-transparent --}}
         <div class="card-body">
           <div class="row">
-            {{!-- --------------------------------------------------------- --}}
-
-            {{!-- <ul> --}}
-              {{!-- {{#each exercises}} --}}
-                {{!-- {{#if workout_type == "Upper Body"}} --}}
-                  {{!-- {{> exercises/exercise-block}} --}}
-                {{!-- {{/if}} --}}
-              {{!-- {{/each}} --}}
-            {{!-- </ul> --}}
+            
             <div class="col col-lg-12">
               <ul id="exercise-list" class="list-group">
               
               </ul>
 
             </div>
-            {{!-- <div class="col col-lg-3">
-              <ul id="exercise-list2" class="list-group2"></ul>
-              
-            </div>
-            <div class="col col-lg-6">
-              <ul id="exercise-list3" class="list-group3"></ul>
-        
-            </div> --}}
-
+            
             <button class="btn btn-danger mx-auto complete" id="log-completed-btn">Log Completed Workout</button>
-            {{!-- --------------------------------------------------------- --}}
-            {{!-- <div class="col col-lg-3">
-              <div class="row">
-                <div class="col">
-                  <p>1. Pullups </p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col">
-                  <img src="assets/images/UB1a.jpg" style="width: 80px; margin: 2px; float: left">
-                  <img src="assets/images/UB1b.jpg" style="width: 80px; margin: 2px">
-                </div>
-              </div>
-            </div>
-            <div class="col col-lg-3">
-              <div class="row">
-                <div class="col">
-                  <p>Reps: <input type="number" value="10" min="0" max="20" step="1" /></p>
-                  <p>Sets: <input type="number" value="5" min="0" max="10" step="1" /></p>
-                  <p>Weight (lbs): <input type="number" value="0" min="0" max="300" step="1" />
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col col-lg-6">
-              <div class="row">
-                <div class="col">
-
-                </div>
-              </div>
-            </div> --}}
 
           </div>
 
@@ -121,6 +230,12 @@
 
     <div class="tab-pane fade" id="nav-fitbit-stats" role="tabpanel" aria-labelledby="nav-fitbit-stats-tab"><br>
       <h5 class="heading">Fitbit Stats</h5>
+
+      <br>
+      <h6 style="color: white">Link to your Fitbit Device!</h6>
+      <br>
+      <h6 style="color: white">Under Construction!</h6>
+      <img src ="images/comingsoon.jpg" style="width: 50%"/>
     </div>
 
     <div class="tab-pane fade" id="nav-spotify" role="tabpanel" aria-labelledby="nav-spotify-tab"><br>

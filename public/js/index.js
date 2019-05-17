@@ -89,6 +89,7 @@ var handleFormSubmit = function (event) {
 
 var displayExercise = function (workoutType) {
   $("#log-completed-btn").show();
+  // window.location.href='#nav-analytics'; 
   exercise_id_count = 0; // reset count so can update if change workoutType
   API.getExercises().then(function (results) {
     
@@ -161,11 +162,14 @@ var displayExercise = function (workoutType) {
       var $button = $("<button>")
         .addClass("btn btn-danger completeSet")
         .attr('id', 'set-1')
+        .attr("exer_tag", exercise_id_count)
         .text("Set #1")
         .val("False")
         .on("click", function(){
           $(this).addClass("clickedBtn").val("True");
-          // console.log(this.value);
+          console.log(this.value);
+          console.log($(this).attr("exer_tag"));
+          passThis[$(this).attr("exer_tag")].sets_1 = true;
         });
         // .on("click", function(){
         //   $(this).toggleClass("clickedBtn");
@@ -176,37 +180,45 @@ var displayExercise = function (workoutType) {
       var $button = $("<button>")
         .addClass("btn btn-danger completeSet")
         .attr('id', 'set-2')
+        .attr("exer_tag", exercise_id_count)
         .text("Set #2")
         .val("False")
         .on("click", function(){
           $(this).addClass("clickedBtn").val("True");
+          passThis[$(this).attr("exer_tag")].sets_2 = true;
         });
       $div2.append($button);
       var $button = $("<button>")
         .addClass("btn btn-danger completeSet")
         .attr('id', 'set-3')
+        .attr("exer_tag", exercise_id_count)
         .text("Set #3")
         .val("False")
         .on("click", function(){
           $(this).addClass("clickedBtn").val("True");
+          passThis[$(this).attr("exer_tag")].sets_3 = true;
         });
       $div2.append($button);
       var $button = $("<button>")
         .addClass("btn btn-danger completeSet")
         .attr('id', 'set-4')
+        .attr("exer_tag", exercise_id_count)
         .text("Set #4")
         .val("False")
         .on("click", function(){
           $(this).addClass("clickedBtn").val("True");
+          passThis[$(this).attr("exer_tag")].sets_4 = true;
         });
       $div2.append($button);
       var $button = $("<button>")
         .addClass("btn btn-danger completeSet")
         .attr('id', 'set-5')
+        .attr("exer_tag", exercise_id_count)
         .text("Set #5")
         .val("False")
         .on("click", function(){
           $(this).addClass("clickedBtn").val("True");
+          passThis[$(this).attr("exer_tag")].sets_5 = true;
         });
       $div2.append($button);
 
