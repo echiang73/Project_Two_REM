@@ -58,6 +58,10 @@ module.exports = function(app) {
   });
 
 
+  app.get("/progress", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/progress.html"));
+  });
+
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
