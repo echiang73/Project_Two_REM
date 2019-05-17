@@ -49,8 +49,21 @@ module.exports = function(app) {
   //   });
   // });
 
+  app.get("/login", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/login.html"));
+  });
+
+  app.get("/register", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/register.html"));
+  });
+
+
+
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
   });
+
+
 };
+
