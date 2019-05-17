@@ -1,6 +1,9 @@
 var myChart = document.getElementById("myChart").getContext("2d");
 
-$(document).ready(function () {
+//id : nav-analytics-tab
+
+$("#nav-analytics-tab").on("click", function(){
+   
     $.ajax({
         url: "/api/history",
         context: document.body,
@@ -136,5 +139,6 @@ $(document).ready(function () {
 
         }
     });
-});
+
+  });
 
