@@ -49,9 +49,9 @@ VALUES
 ("Core/Cardio", "Burpees", "burpees1.jpg", "burpees2.jpg", 0, 10, 5, "2019.05.13 00:00:00", "2019.05.13 00:00:00"),
 ("Core/Cardio", "Jump Rope", "jump-rope1.jpg", "jump-rope2.jpg", 0, 100, 5, "2019.05.13 00:00:00", "2019.05.13 00:00:00");
 
-UPDATE Exercise_templates SET
-exer_img_url = "pullup1.jpg"
-WHERE id=1;
+
+-- Seed.sql where user_id=1 is default for dynamically displaying exercise
+
 
 INSERT INTO User_histories
 (user_id, date_completed, sets_1, sets_2, sets_3, sets_4, sets_5, createdAt, updatedAt, ExerciseTemplateId)
@@ -61,3 +61,4 @@ VALUES
 ("1", "2019-05-3 04:05:19", 1,1,1,1,0, "2019-05-15 04:05:19","2019-05-15 04:05:19", 12),
 ("1", "2019-05-4 04:05:19", 1,1,1,1,0,"2019-05-15 04:05:19","2019-05-15 04:05:19", 3),
 ("1", "2019-05-5 04:05:19", 1,0,0,0,0, "2019-05-15 04:05:19","2019-05-15 04:05:19", 11);
+
