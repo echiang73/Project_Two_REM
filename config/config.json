@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "MySturt!3",
+    "password": "UABootcamp",
     "database": "exercise_db",
     "host": "localhost",
     "dialect": "mysql"
