@@ -74,8 +74,12 @@ module.exports = function(app) {
 
   // Create a new exercise routine by workout type
   app.post("/api/exercises/completedworkout", function(req, res) {
-    db.User_history.create( // Changed to User History database!
-      exerciseObject1 // Can this object be passed through? What about multiple objects?
+    console.log(req.body);
+
+
+
+    db.User_history.bulkCreate( // Changed to User History database!
+      req.body
       ).then(function(dbExercise) {
       res.json(dbExercise);
     });

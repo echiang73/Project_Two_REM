@@ -3,11 +3,6 @@
 // var $exerciseDescription = $("#exercise-description");
 var $submitBtn = $("#log-completed-btn");
 
-// var $set1 = $("#set-1");
-// var $set2 = $("#set-2");
-// var $set3 = $("#set-3");
-// var $set4 = $("#set-4");
-// var $set5 = $("#set-5");
 var $exerciseList = $("#exercise-list");
 
 var currentDateTime = "";
@@ -25,48 +20,37 @@ function timeStamp() {
 // Keep track of count in order to select exercise ID!
 var exercise_id_count = 0;
 var exercise_object_count = 1;
-// var exercise_id_count = "";
-// var setExerciseCount = function(workoutType){
-//   if (workoutType === "Upper Body") {
-//     exercise_id_count = 1;
-//   }
-//   else if (workoutType === "Lower Body") {
-//     exercise_id_count = 6;
-//   }
-//   else {
-//     exercise_id_count = 11;
-//   }
-// }
 
-var exerciseObject1 = { 
-  // exercise_name: null,
-  user_id: null, date_completed: null, exercise_id: null, weight: null, repetitions: null,
-  sets_1: false, sets_2: false, sets_3: false, sets_4: false, sets_5: false, createdAt: null, updatedAt: null
-}
-var exerciseObject2 = { 
-  // exercise_name: null,
-  user_id: null, date_completed: null, exercise_id: null, weight: null, repetitions: null,
-  sets_1: false, sets_2: false, sets_3: false, sets_4: false, sets_5: false
-}
-var exerciseObject3 = { 
-  // exercise_name: null,
-  user_id: null, date_completed: null, exercise_id: null, weight: null, repetitions: null,
-  sets_1: false, sets_2: false, sets_3: false, sets_4: false, sets_5: false
-}
-var exerciseObject4 = { 
-  // exercise_name: null,
-  user_id: null, date_completed: null, exercise_id: null, weight: null, repetitions: null,
-  sets_1: false, sets_2: false, sets_3: false, sets_4: false, sets_5: false
-}
-var exerciseObject5 = { 
-  // exercise_name: null,
-  user_id: null, date_completed: null, exercise_id: null, weight: null, repetitions: null,
-  sets_1: false, sets_2: false, sets_3: false, sets_4: false, sets_5: false
-}
+var passThis = [];
+
+var data = [
+  // { 
+  //   // exercise_name: null,
+  //   user_id: null, date_completed: null, exercise_id: null, weight: null, repetitions: null,
+  //   sets_1: false, sets_2: false, sets_3: false, sets_4: false, sets_5: false
+  // },{ 
+  //   // exercise_name: null,
+  //   user_id: null, date_completed: null, exercise_id: null, weight: null, repetitions: null,
+  //   sets_1: false, sets_2: false, sets_3: false, sets_4: false, sets_5: false
+  // },{ 
+  //   // exercise_name: null,
+  //   user_id: null, date_completed: null, exercise_id: null, weight: null, repetitions: null,
+  //   sets_1: false, sets_2: false, sets_3: false, sets_4: false, sets_5: false
+  // },{ 
+  //   // exercise_name: null,
+  //   user_id: null, date_completed: null, exercise_id: null, weight: null, repetitions: null,
+  //   sets_1: false, sets_2: false, sets_3: false, sets_4: false, sets_5: false
+  // },{ 
+  //   // exercise_name: null,
+  //   user_id: null, date_completed: null, exercise_id: null, weight: null, repetitions: null,
+  //   sets_1: false, sets_2: false, sets_3: false, sets_4: false, sets_5: false
+  // }
+];
 
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveExercise: function (exercise) {
+    
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
@@ -94,14 +78,11 @@ var handleFormSubmit = function (event) {
   //   alert("You must enter an workout routine text and description!");
   //   return;
   // }
-
-  API.saveExercise(exerciseObject1).then(function () {
+  console.log("HERE")
+  console.log(passThis);
+  API.saveExercise(passThis).then(function () {
     // refreshExercises();
   });
-  // API.saveExercise(exerciseObject2).then(function () {});
-  // API.saveExercise(exerciseObject3).then(function () {});
-  // API.saveExercise(exerciseObject4).then(function () {});
-  // API.saveExercise(exerciseObject5).then(function () {});
   // $exerciseText.val("");
   // $exerciseDescription.val("");
 };
@@ -109,43 +90,50 @@ var handleFormSubmit = function (event) {
 var displayExercise = function (workoutType) {
   $("#log-completed-btn").show();
   exercise_id_count = 0; // reset count so can update if change workoutType
-  API.getExercises().then(function (data) {
+  API.getExercises().then(function (results) {
     
-    data = data.filter(function (e) {
+    data = results.filter(function (e) {
       return e.workout_type === workoutType;
     });
-    // console.log(data);
     timeStamp();
+    passThis = data.map(function (e) {
+      return { 
+          user_id: 1, date_completed: currentDateTime, ExerciseTemplateId: e.id,
+          sets_1: false, sets_2: false, sets_3: false, sets_4: false, sets_5: false
+      }
+    });
+    console.log(passThis);
 
       var $exercises = data.map(function (exercise) {
       
-      exerciseObject=['exerciseObject' + exercise_object_count];
-      // exerciseObject.exercise_name = data[exercise_id_count].exercise_name;
-      exerciseObject.user_id = 1;
-      exerciseObject.date_completed = currentDateTime;
-      exerciseObject.exercise_id = data[exercise_id_count].id; // id is primary key for exercise_template and foreign key for exercise_id in history table 
-      exerciseObject.weight = data[exercise_id_count].weight;
-      exerciseObject.repetitions = data[exercise_id_count].repetitions;
-      exerciseObject.sets_1 = false;
-      exerciseObject.sets_2 = false;
-      exerciseObject.sets_3 = false;
-      exerciseObject.sets_4 = false;
-      exerciseObject.sets_5 = false;
-      exerciseObject.createdAt = "2019-05-16 01:00:00";
-      exerciseObject.updatedAt = "2019-05-16 01:00:00";
+      // data=['data' + exercise_object_count];
+      // data.exercise_name = data[exercise_id_count].exercise_name;
+      data[exercise_id_count].user_id = 1;
+      data[exercise_id_count].date_completed = currentDateTime;
+      // data[exercise_id_count].ExerciseTemplateId = data[exercise_id_count].id; // id is primary key for exercise_template and foreign key for exercise_id in history table 
+      // data[exercise_id_count].weight = data[exercise_id_count].weight;
+      // data[exercise_id_count].repetitions = data[exercise_id_count].repetitions;
+      data[exercise_id_count].sets_1 = false;
+      data[exercise_id_count].sets_2 = false;
+      data[exercise_id_count].sets_3 = false;
+      data[exercise_id_count].sets_4 = false;
+      data[exercise_id_count].sets_5 = false;
+      data[exercise_id_count].ExerciseTemplateId = data[exercise_id_count].id; // id is primary key for exercise_template and foreign key for exercise_id in history table 
+      // exerciseObject[exercise_id_count].createdAt = "2019-05-16 01:00:00";
+      // exerciseObject[exercise_id_count].updatedAt = "2019-05-16 01:00:00";
       
       console.log("----------------------");
-      // console.log("Exercise Name: " + exerciseObject.exercise_name);
-      console.log("User ID: " + exerciseObject.user_id);
-      console.log("Date completed: " + exerciseObject.date_completed);
-      console.log("Exercise ID: " + exerciseObject.exercise_id);
-      console.log("Weight: " + exerciseObject.weight);
-      console.log("Reps: " + exerciseObject.repetitions);
-      console.log("Set #1: " + exerciseObject.sets_1);
-      console.log("Set #2: " + exerciseObject.sets_2);
-      console.log("Set #3: " + exerciseObject.sets_3);
-      console.log("Set #4: " + exerciseObject.sets_4);
-      console.log("Set #5: " + exerciseObject.sets_5);
+      // console.log("Exercise Name: " + exerciseObject[exercise_id_count].exercise_name);
+      console.log("User ID: " + data[exercise_id_count].user_id);
+      console.log("Date completed: " + data[exercise_id_count].date_completed);
+      console.log("Exercise Template ID: " + data[exercise_id_count].ExerciseTemplateId);
+      // console.log("Weight: " + data[exercise_id_count].weight);
+      // console.log("Reps: " + data[exercise_id_count].repetitions);
+      console.log("Set #1: " + data[exercise_id_count].sets_1);
+      console.log("Set #2: " + data[exercise_id_count].sets_2);
+      console.log("Set #3: " + data[exercise_id_count].sets_3);
+      console.log("Set #4: " + data[exercise_id_count].sets_4);
+      console.log("Set #5: " + data[exercise_id_count].sets_5);
 
       var txt1 = $("<h3></h3>").text(exercise.exercise_name + " ")
         .attr("id", "description1");
@@ -230,7 +218,7 @@ var displayExercise = function (workoutType) {
 
       return $li;
     });
-
+    // console.log("Weight for exercise x: " + data[4].weight);
     $exerciseList.empty();
     $exerciseList.append($exercises);
   });
