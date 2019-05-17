@@ -9,22 +9,22 @@ module.exports = function(app) {
         // msg: "Welcome!",
         exercises: dbExercises
       });
-      console.log(dbExercises);
+      // console.log(dbExercises);
     });
   });
 
   // // Load UPPER BODY page
-  app.get("/upper_body", function(req, res) {
-    db.Exercise_template.findAll({
-      where: {workout_type: "Upper Body"}
-    }).then(function(dbExercises) {
-      res.render("upperbody", {
-        // msg: "Welcome!",
-        exercises: dbExercises
-      });
-      console.log(dbExercises);
-    });
-  });
+  // app.get("/upper_body", function(req, res) {
+  //   db.Exercise_template.findAll({
+  //     where: {workout_type: "Upper Body"}
+  //   }).then(function(dbExercises) {
+  //     res.render("upperbody", {
+  //       // msg: "Welcome!",
+  //       exercises: dbExercises
+  //     });
+  //     console.log(dbExercises);
+  //   });
+  // });
 
   // Load UPPER BODY page
   // app.get("/", function(req, res) {
@@ -41,13 +41,13 @@ module.exports = function(app) {
   // });
 
   // Load exercise page and pass in an exercise by id
-  app.get("/exercise/:id", function(req, res) {
-    db.Exercise_template.findOne({ where: { id: req.params.id } }).then(function(dbExercise) {
-      res.render("exercise", {
-        exercise: dbExercise
-      });
-    });
-  });
+  // app.get("/exercise/:id", function(req, res) {
+  //   db.Exercise_template.findOne({ where: { id: req.params.id } }).then(function(dbExercise) {
+  //     res.render("exercise", {
+  //       exercise: dbExercise
+  //     });
+  //   });
+  // });
 
   app.get("/login", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/login.html"));

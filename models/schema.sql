@@ -16,7 +16,7 @@ repetitions INT NOT NULL,
 sets INT NOT NULL
 );
 
-CREATE TABLE User_history(
+CREATE TABLE User_histories(
 
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 user_id INT NOT NULL,
@@ -30,7 +30,7 @@ sets_5 BOOLEAN NOT NULL
 );
 
 -- Seed.sql where user_id=1 is default for dynamically displaying exercise
-INSERT INTO Exercise_template
+INSERT INTO Exercise_templates
 (workout_type, exercise_name, exer_img_url1, exer_img_url2, weight, repetitions, sets, createdAt, UpdatedAt)
 VALUES
 ("Upper Body", "Pullups", "pullup1.jpg", "pullup2.jpg", 0, 10, 5, "2019.05.13 00:00:00", "2019.05.13 00:00:00"),
@@ -49,6 +49,6 @@ VALUES
 ("Core/Cardio", "Burpees", "burpees1.jpg", "burpees2.jpg", 0, 10, 5, "2019.05.13 00:00:00", "2019.05.13 00:00:00"),
 ("Core/Cardio", "Jump Rope", "jump-rope1.jpg", "jump-rope2.jpg", 0, 100, 5, "2019.05.13 00:00:00", "2019.05.13 00:00:00");
 
-UPDATE Exercise_template SET
+UPDATE Exercise_templates SET
 exer_img_url = "pullup1.jpg"
 WHERE id=1;

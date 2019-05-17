@@ -14,6 +14,14 @@ module.exports = function(app) {
     });
   });
 
+  // Get all exercises based on workout type!
+  // app.get("/api/exercises/:workout_type", function(req, res) {
+  //   db.Exercise_template.findAll({
+  //     where: {workout_type: req.params.workout_type}
+  //   }).then(function(dbExercises) {
+  //     res.json(dbExercises);
+  //   });
+  // });
   app.get("/api/exercises/:id", function(req, res) {
     // Here we add an "include" property to our options in our findOne query
     // We set the value to an array of the models we want to include in a left outer join
@@ -65,25 +73,18 @@ module.exports = function(app) {
 
 
   // Create a new exercise routine by workout type
-  app.post("/api/exercises/:workout_type", function(req, res) {
-    db.Exercise_template.create({
-      exercise_name,
-      exer_img_url,
-      weight,
-      repetitions,
-      sets
-    },{
-       where: { workout_type: req.params.workout_type}
-    }
+  app.post("/api/exercises/completedworkout", function(req, res) {
+    db.User_history.create( // Changed to User History database!
+      exerciseObject1 // Can this object be passed through? What about multiple objects?
       ).then(function(dbExercise) {
       res.json(dbExercise);
     });
   });
 
   // Delete an exercise by id
-  app.delete("/api/exercises/:id", function(req, res) {
-    db.Exercise_template.destroy({ where: { id: req.params.id } }).then(function(dbExercise) {
-      res.json(dbExercise);
-    });
-  });
+  // app.delete("/api/exercises/:id", function(req, res) {
+  //   db.Exercise_template.destroy({ where: { id: req.params.id } }).then(function(dbExercise) {
+  //     res.json(dbExercise);
+  //   });
+  // });
 };
