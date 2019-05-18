@@ -236,10 +236,12 @@ $("#nav-analytics-tab").on("click", function(){
                        
                         display: true,
                         text: "this is a string",
+
                         labels: {
                             fontColor: 'rgb(255, 99, 132)'
                         }
                     },
+r
                     title:{
                         display:true,
                         text:'Workout Progress',
