@@ -23,29 +23,7 @@ var exercise_object_count = 1;
 
 var passThis = [];
 
-var data = [
-  // { 
-  //   // exercise_name: null,
-  //   user_id: null, date_completed: null, exercise_id: null, weight: null, repetitions: null,
-  //   sets_1: false, sets_2: false, sets_3: false, sets_4: false, sets_5: false
-  // },{ 
-  //   // exercise_name: null,
-  //   user_id: null, date_completed: null, exercise_id: null, weight: null, repetitions: null,
-  //   sets_1: false, sets_2: false, sets_3: false, sets_4: false, sets_5: false
-  // },{ 
-  //   // exercise_name: null,
-  //   user_id: null, date_completed: null, exercise_id: null, weight: null, repetitions: null,
-  //   sets_1: false, sets_2: false, sets_3: false, sets_4: false, sets_5: false
-  // },{ 
-  //   // exercise_name: null,
-  //   user_id: null, date_completed: null, exercise_id: null, weight: null, repetitions: null,
-  //   sets_1: false, sets_2: false, sets_3: false, sets_4: false, sets_5: false
-  // },{ 
-  //   // exercise_name: null,
-  //   user_id: null, date_completed: null, exercise_id: null, weight: null, repetitions: null,
-  //   sets_1: false, sets_2: false, sets_3: false, sets_4: false, sets_5: false
-  // }
-];
+var data = [];
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -73,18 +51,8 @@ var API = {
 var handleFormSubmit = function (event) {
   event.preventDefault();
   console.log("Trying to submit the completed workout to database!");
-
-  // if (!(workoutRoutine.text && workoutRoutine.description)) {
-  //   alert("You must enter an workout routine text and description!");
-  //   return;
-  // }
-  console.log("HERE")
   console.log(passThis);
-  API.saveExercise(passThis).then(function () {
-    // refreshExercises();
-  });
-  // $exerciseText.val("");
-  // $exerciseDescription.val("");
+  API.saveExercise(passThis).then(function () {});
 };
 
 var displayExercise = function (workoutType) {
@@ -171,11 +139,6 @@ var displayExercise = function (workoutType) {
           console.log($(this).attr("exer_tag"));
           passThis[$(this).attr("exer_tag")].sets_1 = true;
         });
-        // .on("click", function(){
-        //   $(this).toggleClass("clickedBtn");
-        //   $(this).val = !$(this).val;
-        //   console.log(this.value);
-        // });
       $div2.append($button);
       var $button = $("<button>")
         .addClass("btn btn-danger completeSet")
