@@ -106,7 +106,12 @@ $("#nav-analytics-tab").on("click", function(){
                     }]
                 },
                 options: {
-                    
+                    legend: {
+                        display: false,
+                        labels: {
+                            fontColor: 'rgb(255, 99, 132)'
+                        }
+                    },
 
                     title:{
                         display:true,
