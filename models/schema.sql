@@ -17,16 +17,17 @@ sets INT NOT NULL
 );
 
 CREATE TABLE User_histories(
-
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 user_id INT NOT NULL,
-weight INT NOT NULL,
-repetitions INT NOT NULL,
+date_completed DATETIME,
 sets_1 BOOLEAN NOT NULL,
 sets_2 BOOLEAN NOT NULL,
 sets_3 BOOLEAN NOT NULL,
 sets_4 BOOLEAN NOT NULL,
-sets_5 BOOLEAN NOT NULL
+sets_5 BOOLEAN NOT NULL,
+createdAt DATETIME,
+updatedAt DATETIME,
+ExerciseTemplateId INT
 );
 
 -- Seed.sql where user_id=1 is default for dynamically displaying exercise
