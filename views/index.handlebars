@@ -200,16 +200,34 @@
       <div class="card exercise bg-transparent"> {{!-- bg-transparent --}}
         <div class="card-body">
           <div class="row">
-            
             <div class="col col-lg-12">
               <ul id="exercise-list" class="list-group">
-              
               </ul>
+            </div>
+          </div>
 
+          <div class="row">
+            <div class="col-lg-12" id="summary-table" style="background-color: white">
+              <table class="center">
+                <thead>
+                  <br>
+                  <h4 id="table-submitted">Submitted to Database!</h4>
+                  <tr>
+                    <th id="exercise-id">Exercise #</th>
+                    <th id="exercise-set1">Set 1</th>
+                    <th id="exercise-set2">Set 2</th>
+                    <th id="exercise-set3">Set 3</th>
+                    <th id="exercise-set4">Set 4</th>
+                    <th id="exercise-set4">Set 5</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{!-- After log completed workout button clicked, summary table goes here --}}
+                </tbody>
+              </table>
             </div>
             
             <button class="btn btn-danger mx-auto complete" id="log-completed-btn">Log Completed Workout</button>
-
           </div>
 
         </div>

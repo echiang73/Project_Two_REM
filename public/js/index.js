@@ -52,6 +52,7 @@ var handleFormSubmit = function (event) {
   event.preventDefault();
   console.log("Trying to submit the completed workout to database!");
   console.log(passThis);
+  displayResults(passThis);
   API.saveExercise(passThis).then(function () {});
 };
 
@@ -199,17 +200,41 @@ var displayExercise = function (workoutType) {
   });
 };
 
+function displayResults(completedWorkout) {
+  $("tbody").empty();
+  $("#summary-table").show();
+  $("thead").show();
+console.log("completedworkout: "+completedWorkout[0].sets_1);
+  completedWorkout.forEach(function(exerciseData, i) {
+    var tr = $("<tr>").append(
+      $("<td>").text(i+1),
+      $("<td>").text(exerciseData.sets_1),
+      $("<td>").text(exerciseData.sets_2),
+      $("<td>").text(exerciseData.sets_3),
+      $("<td>").text(exerciseData.sets_4),
+      $("<td>").text(exerciseData.sets_5)
+    );
+
+    $("tbody").append(tr);
+  });
+}
+
 $("#log-completed-btn").hide();
+$("#summary-table").hide();
+$("thead").hide();
 
 $(document).ready(function(){
   $("#upper_body").click(function(){
     displayExercise("Upper Body");
+    $("#summary-table").hide();
   });
   $("#lower_body").click(function(){
     displayExercise("Lower Body");
+    $("#summary-table").hide();
   });
   $("#core_cardio").click(function(){
     displayExercise("Core/Cardio");
+    $("#summary-table").hide();
   });
 });
 
